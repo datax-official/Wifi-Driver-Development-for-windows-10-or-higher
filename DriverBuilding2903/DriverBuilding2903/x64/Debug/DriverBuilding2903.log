@@ -1,0 +1,11 @@
+﻿  Building 'DriverBuilding2903' with toolset 'WindowsKernelModeDriver10.0' and the 'Desktop' target platform.
+  DriverEntry.cpp
+C:\Users\rajaa\source\repos\DriverBuilding2903\DriverBuilding2903\DriverEntry.cpp(60,32): warning C4127: conditional expression is constant
+C:\Users\rajaa\source\repos\DriverBuilding2903\DriverBuilding2903\DriverEntry.cpp(71,36): warning C4127: conditional expression is constant
+C:\Users\rajaa\source\repos\DriverBuilding2903\DriverBuilding2903\DriverEntry.cpp(162,15): warning C4189: 'bufferLength': local variable is initialized but not referenced
+  DriverBuilding2903.vcxproj -> C:\Users\rajaa\source\repos\DriverBuilding2903\x64\Debug\DriverBuilding2903.sys
+  Done Adding Additional Store
+  Successfully signed: C:\Users\rajaa\source\repos\DriverBuilding2903\x64\Debug\DriverBuilding2903.sys
+  
+  Inf2Cat task was skipped as there were no inf files to process
+  

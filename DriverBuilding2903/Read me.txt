@@ -1,0 +1,57 @@
+Overview:
+This project involves the development of a Windows kernel-mode driver for monitoring network activities. The driver aims to provide functionality for scanning devices and connecting to networks, along with supporting IOCTL commands for specific operations such as monitoring internet speed.
+
+Keywords: Windows Driver Development, Kernel Mode, Network Monitoring, IOCTL, IRP, Device Object, Symbolic Link, Driver Entry, Driver Dispatch, Driver Unload
+
+Project Structure:
+
+DriverBuilding2903: Root folder containing driver source code and related files.
+DriverBuilding2903.sln: Visual Studio solution file.
+DriverBuilding2903: Visual Studio project folder.
+DriverBuilding2903.c: Main source file containing driver entry point and dispatch routines.
+DriverBuilding2903.vcxproj: Visual Studio project file.
+DriverBuilding2903.vcxproj.filters: Visual Studio project filters file.
+DriverBuilding2903.vcxproj.user: Visual Studio project user-specific file.
+README.md: Markdown file containing project documentation and instructions.
+Implementation Details:
+
+Driver Entry Point (DriverEntry): The DriverEntry function initializes the driver, creates a device object, assigns dispatch routines for major IRP functions, and handles any necessary additional initialization tasks.
+
+Dispatch Routines:
+
+DriverCreate: Handles create requests from user-mode applications.
+DriverClose: Handles close requests from user-mode applications.
+DriverDeviceControl: Handles device control requests, including IOCTL commands.
+DriverScanDevices: Handles scan device requests from user-mode applications.
+DriverConnectNetwork: Handles connect network requests from user-mode applications.
+IOCTL Definitions:
+
+The MONITOR_INTERNET_SPEED IOCTL code is defined for monitoring internet speed.
+Error Handling:
+
+Checks are implemented to ensure custom IRP codes (IRP_MJ_SCAN_DEVICE and IRP_MJ_CONNECT_NETWORK) are within the bounds of the MajorFunction array. If out of bounds, appropriate action is taken (e.g., logging an error message and setting function pointers to NULL).
+Internet Speed Monitoring:
+
+The MonitorInternetSpeed function is implemented to provide functionality for monitoring internet speed.
+Driver Unload Routine (UnloadDriver):
+
+Cleans up resources when the driver is unloaded, including deleting symbolic links and device objects.
+Challenges Faced:
+
+Understanding Windows kernel-mode driver development concepts and APIs.
+Handling IRP dispatch routines and IOCTL commands correctly.
+Ensuring proper error handling and resource cleanup to prevent memory leaks and system instability.
+Managing symbolic links and device objects for communication with user-mode applications.
+Future Improvements:
+
+Enhance functionality for network scanning and connection management.
+Implement additional IOCTL commands for diverse operations.
+Improve error handling and logging mechanisms for better diagnostic capabilities.
+Optimize performance and memory usage for increased efficiency.
+Conclusion:
+The network monitor driver project aims to provide essential functionality for monitoring network activities in Windows kernel-mode. Through careful implementation and adherence to driver development best practices, the driver offers a robust solution for various network monitoring tasks.
+
+Author:
+[Ahmed Ali]
+Date:
+[30 March 2024]
